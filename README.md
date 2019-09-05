@@ -1,12 +1,14 @@
-<p align="center">
-  <a href="https://liip.ch/"><img src="https://github.com/liip.png" alt="Liip" width="150px" /></a><br />
-  <em>presents</em><br />
-  The Accessibility Testing Machine
-</p>
-
-<hr />
-
 # The A11y Machine
+
+**Update About This Fork**
+
+This fork was made in early September of 2019. When attempting to install `npm audit` indicated that the `open` package had serious security risks.
+
+Trying to use `--open` to view the dashboard in a browser doesn't work anyway (on Ubuntu 18.04) so there may have been an OS level patch of some kind...not that this is secure, apparently `phantomjs` also has some vulnerabilities. Buyer beware.
+
+I don't have Java installed so I don't know about the `Nu HTML Checker` and I haven't tried it via Docker but, I updated the packages in `package.json` to refelect the currently installed and working version--at least, if it still works now that I have removed `open` from the list.
+
+I was able to get it working on OpenLitespeed, which acts as a reverse proxy to itself so that I can server the app on port 80 and visitors can use it without appending a port to the URL.
 
 [![Version](https://img.shields.io/npm/v/the-a11y-machine.svg)](https://github.com/liip/TheA11yMachine)
 [![Downloads](https://img.shields.io/npm/dt/the-a11y-machine.svg)](https://www.npmjs.com/package/the-a11y-machine)
@@ -21,7 +23,7 @@ following specifications/laws:
     (WCAG) 2.0, including A, AA and AAA levels ([understanding levels of
     conformance](http://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-levels-head)),
   * U.S. [Section 508](http://www.section508.gov/) legislation,
-  * [W3C HTML5 Recommendation](https://www.w3.org/TR/html/).
+  * _[W3C HTML5 Recommendation](https://www.w3.org/TR/html/)_.
 
 ## Table of contents
 
@@ -71,11 +73,9 @@ reap the benefits.
 $ npm install -g the-a11y-machine
 ```
 
-If you would like to validate your pages against the HTML5 recommendation, then
-you need to [install Java](https://www.java.com/en/download/).
+>If you would like to validate your pages against the HTML5 recommendation, then you need to [install Java](https://www.java.com/en/download/).
 
-As an alternative you can run a Docker image instead, which will ensure the image
-is available locally:
+>As an alternative you can run a Docker image instead, which will ensure the image is available locally:
 
 ```sh
 $ docker build -t liip/the-a11y-machine .
@@ -111,7 +111,7 @@ As a prelude, see the help:
     -m, --maximum-urls <maximum_urls>          Maximum number of URLs to compute.
     -o, --output-directory <output_directory>  Output directory.
     -r, --report <report>                      Report format: `cli`, `csv`, `html` (default), `json` or `markdown`.
-    -s, --standards <standards>                Standard to use: `WCAG2A`, `WCAG2AA` (default), ` WCAG2AAA`, `Section508`, `HTML` or your own (see `--sniffers`). `HTML` can be combined with any other by a comma.
+    -s, --standards <standards>                Standard to use: `WCAG2A`, `WCAG2AA` (default), ` WCAG2AAA`, `Section508`, _`HTML`_ or your own (see `--sniffers`). `HTML` can be combined with any other by a comma.
     -S, --sniffers <sniffers>                  Path to the sniffers file, e.g. `resource/sniffers.js` (default).
     -u, --filter-by-urls <urls>                Filter URL to test by using a regular expression without delimiters (e.g. 'news|contact').
     -U, --exclude-by-urls <urls>               Exclude URL to test by using a regular expression without delimiters (e.g. 'news|contact').
@@ -173,7 +173,7 @@ The dashboard of all reports:
 As mentionned, the following standards are supported:
   * W3C WCAG,
   * U.S. Section 508 legislation,
-  * W3C HTML5 recommendation.
+  * _W3C HTML5 recommendation_.
 
 You cannot combine standards between each other, except HTML5 that can be
 combined with any other. So for instance, to run `WCAG2AAA`:
@@ -203,15 +203,15 @@ The pipe looks like this:
          semi-automated by the help of
          [`pa11y`](https://github.com/nature/pa11y), which is a very thin layer
          of code wrapping PhantomJS and `HTML_CodeSniffer`,
-      2. **HTML**: [The Nu Html Checker](http://validator.github.io/validator/)
-         (v.Nu) is run on the same URL.
+      2. _**HTML**: [The Nu Html Checker](http://validator.github.io/validator/)
+         (v.Nu) is run on the same URL._
   3. Finally, results from different tools are normalized, and enhanced and easy
      to use reports are produced.
 
 PhantomJS and `HTML_CodeSniffer` are widely-used, tested and precise tools.
-`pa11y` simplifies the use of these two latters. The Nu Html Checker is the tool
+`pa11y` simplifies the use of these two latters. _The Nu Html Checker is the tool
 used by the W3C to validate documents online. However, in this case, we **do all
-validations offline**! Nothing is sent over the network. Again, privacy.
+validations offline**!_ Nothing is sent over the network. Again, privacy.
 
 ### Write your custom rules
 
@@ -266,8 +266,8 @@ $ ./a11ym-dashboard --root my_reports --static-output
 
 Open `my_reports/index.html`, and do the same!
 
-Bonus: Use the `--open` option to automatically open the dashboard in your
-favorite browser.
+~~Bonus: Use the `--open` option to automatically open the dashboard in your
+favorite browser.~~
 
 ## Roadmap and board
 
@@ -277,7 +277,7 @@ The roadmap is public:
   * See [the in progress
     issues](https://github.com/liip/TheA11yMachine/labels/in%20progress).
 
-The board is publicly available at the following URL: https://waffle.io/liip/TheA11yMachine.
+~~The board is publicly available at the following URL: https://waffle.io/liip/TheA11yMachine.~~
 
 ## Authors and license
 

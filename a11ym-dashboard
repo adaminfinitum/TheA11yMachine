@@ -37,7 +37,7 @@ var _       = require('underscore');
 var fs      = require('fs');
 var glob    = require('glob');
 var http    = require('http');
-var open    = require('open');
+//var open    = require('open');
 var path    = require('path');
 var program = require('commander');
 
@@ -62,10 +62,10 @@ program
         '-s, --static-output',
         'Generate static files instead of serving them over HTTP.'
     )
-    .option(
+/*    .option(
         '-o, --open',
         'Directly open the dashboard in your favorite browser.'
-    )
+    )*/
     .parse(process.argv);
 
 // No address and port to compute? Then exit.
@@ -172,9 +172,9 @@ if (undefined === program.staticOutput) {
 
     console.log('Server is listening on ' + program.address + ':' + program.port + '!');
 
-    if (program.open) {
+/*    if (program.open) {
         open('http://' + program.address + ':' + program.port);
-    }
+    }*/
 }
 // Generate static files.
 else {

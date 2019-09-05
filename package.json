@@ -1,10 +1,10 @@
 {
   "name": "the-a11y-machine",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "The A11y Machine is an automated accessibility testing tool which crawls and tests all pages of any website.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liip/TheA11yMachine.git"
+    "url": "git+https://github.com/adaminfinitum/TheA11yMachine.git"
   },
   "keywords": [
     "accessibility",
@@ -15,29 +15,28 @@
   "author": "Ivan Enderlin",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/liip/TheA11yMachine/issues"
+    "url": "https://github.com/adaminfinitum/TheA11yMachine/issues"
   },
-  "homepage": "https://github.com/liip/TheA11yMachine#readme",
+  "homepage": "https://github.com/adaminfinitum/TheA11yMachine#readme",
   "main": "./lib/a11ym.js",
   "dependencies": {
-    "html_codesniffer": "^2.2.0",
-    "async": "^2.1.4",
+    "html_codesniffer": "^2.4.1",
+    "async": "^3.1.0",
     "chalk": "^1.1.3",
-    "commander": "^2.9.0",
-    "get-installed-path": "^2.0.3",
+    "commander": "^2.20.0",
+    "get-installed-path": "^2.1.1",
     "glob": "^6.0.4",
-    "js-yaml": "^3.7.0",
-    "merge": "^1.2.0",
+    "js-yaml": "^3.13.1",
+    "merge": "^1.2.1",
     "mkdirp": "^0.5.1",
-    "open": "0.0.5",
-    "pa11y": "^4.3.0",
-    "phantomjs-prebuilt": "^2.1.14",
-    "process": "^0.11.9",
-    "simplecrawler": "^1.0.3",
-    "underscore": "^1.8.3"
+    "pa11y": "^4.13.2",
+    "phantomjs-prebuilt": "^2.1.16",
+    "process": "^0.11.10",
+    "simplecrawler": "^1.1.8",
+    "underscore": "^1.9.1"
   },
   "engines": {
-    "node": ">=0.12.9"
+    "node": "10.6.3"
   },
   "bin": {
     "a11ym": "./a11ym",
